@@ -1,0 +1,152 @@
+<body>
+<div id="tab">
+    <div id="tab_header">
+        <ul>
+            <li class="selected lis" data-id="a">XXX<>
+            <li class="lis" data-id="b">XXX<>
+            <li class="lis" data-id="c">XXX<>
+            <li class="lis" data-id="d">XXX<>
+            <li class="lis" data-id="e">XXX<>
+        </ul>
+    </div>
+
+    <div id="tab_content">
+        <div class="dom" id="a-show" style="display: block">
+            <ul>
+                <li><a href="">XXXX</a><>
+                <li><a href="">XXXX</a><>
+                <li><a href="">XXXX</a><>
+                <li><a href="">XXXX</a><>
+            </ul>
+        </div>
+        <div class="dom" id="b-show">
+            <ul>
+                <li><a href="">XXXX1</a><>
+                <li><a href="">XXXX1</a><>
+                <li><a href="">XXXX1</a><>
+                <li><a href="">XXXX1</a><>
+            </ul>
+        </div>
+        <div class="dom" id="c-show">
+            <ul>
+                <li><a href="">XXXX2</a><>
+                <li><a href="">XXXX2</a><>
+                <li><a href="">XXXX2</a><>
+                <li><a href="">XXXX2</a><>
+            </ul>
+        </div>
+        <div class="dom" id="d-show">
+            <ul>
+                <li><a href="">XXXX3</a><>
+                <li><a href="">XXXX3</a><>
+                <li><a href="">XXXX3</a><>
+                <li><a href="">XXXX3</a><>
+            </ul>
+        </div>
+        <div class="dom" id="e-show">
+            <ul>
+                <li><a href="">XXXX4</a><>
+                <li><a href="">XXXX4</a><>
+                <li><a href="">XXXX4</a><>
+                <li><a href="">XXXX4</a><>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="object.js"></script>
+<script>
+    $(function () {
+       let lis = new Tab($(".lis"),$(".dom"));
+        console.log(lis);
+
+    })
+</script>
+</body>
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    #tab{
+        width: 498px;
+        height: 120px;
+        border: 1px solid #ccc;
+        margin: 100px auto;
+
+
+    }
+    #tab_header{
+        background-color: #e8e8e8;
+        height: 28px;
+        line-height: 28px;
+    }
+    #tab_header ul{
+        width: 500px;
+
+        /*display: flex;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 28px;
+
+        border-bottom: 1px solid #666;*/
+    }
+    #tab_header ul li{
+        float: left;
+        width: 98px;
+        text-align: center;
+
+        border-bottom: 1px solid #ccc;
+
+        cursor: pointer;
+    }
+
+    #tab_header ul li.selected{
+        background-color: #fff;
+        border-bottom: none;
+
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+
+    #tab_header ul li :nth-child(1){
+        border-left:none;
+    }
+    #tab_header ul li :nth-last-child{
+        border-right:none;
+    }
+
+    #tab_header ul li:hover{
+        color: orange;
+    }
+
+    #tab_content{
+
+    }
+    #tab_content .dom{
+        display: none;
+        padding-top: 20px;
+    }
+
+    #tab_content .dom ul li{
+        float: left;
+        width: 220px;
+        text-align: center;
+        margin: 5px;
+    }
+
+    #tab_content .dom ul li a:hover{
+        color: orange;
+    }
+</style>
